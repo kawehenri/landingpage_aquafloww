@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaFloww - Sistema Inteligente de Irrigação</title>
+    <link rel="stylesheet" href="static/css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="./static/imgs/logo.png" alt="AquaFloww" class="nav-logo">
+                <span class="brand-text">AquaFloww</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Início</a>
+                <a href="#features" class="nav-link">Recursos</a>
+                <a href="#about" class="nav-link">Sobre</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="./static/imgs/fundo2.png" alt="Background" class="hero-bg">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Sistema Inteligente de 
+                        <span class="highlight">Irrigação</span>
+                    </h1>
+                    <p class="hero-description">
+                        Controle e monitore sua irrigação de forma inteligente. 
+                        Economize água e energia enquanto aumenta a produtividade 
+                        do seu cultivo com tecnologia de ponta.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="scrollToFeatures()">
+                            <i class="fas fa-play"></i>
+                            Saiba Mais
+                        </button>
+                        <a href="historia.html" class="btn btn-outline">
+                            <i class="fas fa-history"></i>
+                            Conheça a História do Projeto
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="./static/imgs/logo.png" alt="AquaFloww Sistema" class="hero-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Recursos Principais</h2>
+                <p class="section-subtitle">
+                    Tecnologia avançada para uma irrigação mais eficiente e sustentável
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="feature-title">Eficiência</h3>
+                    <p class="feature-description">
+                        Reduza o desperdício de água e energia. Nosso sistema automatizado 
+                        garante que a irrigação seja feita de forma eficiente, economizando 
+                        recursos e aumentando a produtividade.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Controle Remoto</h3>
+                    <p class="feature-description">
+                        Gerencie sua irrigação de qualquer lugar. Com acesso remoto, 
+                        você pode monitorar e ajustar o sistema de irrigação diretamente 
+                        do seu dispositivo móvel ou computador.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3 class="feature-title">Sustentabilidade</h3>
+                    <p class="feature-description">
+                        Contribua para um futuro sustentável. Adote práticas inteligentes 
+                        que ajudam a preservar o meio ambiente enquanto aumentam a 
+                        eficiência do cultivo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Sobre o Projeto</h2>
+                    <p class="about-description">
+                        Este projeto propõe o desenvolvimento de um sistema inteligente de 
+                        controle e monitoramento de irrigação, com suporte multiplataforma 
+                        (desktop, web e mobile). A solução realiza o manejo automático da 
+                        irrigação, fornecendo a quantidade exata de água necessária para a 
+                        cultura, evitando o estresse hídrico das plantas e o desperdício de 
+                        recursos, como água e energia elétrica.
+                    </p>
+                    <div class="stats">
+                        <div class="stat">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Automatizado</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Plataformas</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Monitoramento</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="./static/imgs/logo.png" alt="Sistema AquaFloww" class="about-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Perguntas Frequentes</h2>
+                <p class="section-subtitle">
+                    Tire suas dúvidas sobre o sistema AquaFloww
+                </p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Por que nós desenvolvemos esse projeto?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Para resolver o problema de desperdício de água e energia na irrigação, 
+                        consequentemente tornando um cultivo mais eficiente.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Qual a finalidade do projeto?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Criar um sistema para controle e monitoramento de irrigação com suporte 
+                        multiplataforma para desktop, web e aplicativo móvel.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Quais plataformas são compatíveis com o sistema desenvolvido?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>O sistema desenvolvido foi projetado com foco em acessibilidade, desempenho 
+                        e versatilidade, sendo compatível com diversas plataformas para atender às 
+                        mais variadas necessidades dos usuários. Atualmente, ele é totalmente funcional 
+                        nos principais sistemas operacionais, incluindo Windows, macOS e Linux, tanto 
+                        para uso em desktops quanto notebooks. Além disso, o sistema possui uma versão 
+                        responsiva e otimizada para dispositivos móveis, garantindo compatibilidade 
+                        com Android e iOS, seja por meio de aplicativo dedicado ou acesso via navegador. 
+                        Também é possível integrá-lo a ambientes web, o que permite seu uso em qualquer 
+                        dispositivo com acesso à internet, sem a necessidade de instalação local. Essa 
+                        ampla compatibilidade garante flexibilidade e facilidade de uso, independentemente 
+                        da plataforma utilizada pelo cliente ou pela equipe técnica.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Como o sistema ajuda a evitar o desperdício de recursos?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ao fornecer apenas a quantidade de água necessária, evita o estresse hídrico 
+                        e o uso excessivo de água e energia elétrica.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>O sistema pode ser acessado remotamente? Como?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim, via internet, por computador ou dispositivo móvel.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Qual foi o contexto em que o projeto foi desenvolvido?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Como parte de uma iniciação científica com foco em inovação tecnológica 
+                        aplicada ao campo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Produto</h4>
+                        <ul>
+                            <li><a href="#features">Recursos</a></li>
+                            <li><a href="#about">Sobre</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contato</h4>
+                        <div class="contact-info">
+                            <p><i class="fas fa-envelope"></i> flowwaqua@gmail.com</p>
+                            <p><i class="fas fa-map-marker-alt"></i> SENAI Taguatinga-DF</p>
+                            <p><i class="fas fa-map-marker-alt"></i> SESI Taguatinga-DF</p>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Apoio</h4>
+                        <div class="support-logos">
+                            <img src="./static/imgs/SENAI_logo_2024.png" alt="SENAI" class="support-logo">
+                            <img src="./static/imgs/SESI_logo_2024.png" alt="SESI" class="support-logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AquaFloww. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="static/js/script.js"></script>
+</body>
+</html>
