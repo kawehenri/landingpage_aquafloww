@@ -428,21 +428,35 @@ document.addEventListener('DOMContentLoaded', function() {
     // Enhanced FAQ with smooth animations
     const faqQuestions = document.querySelectorAll('.faq-question');
     faqQuestions.forEach(question => {
-        question.addEventListener('click', function() {
-            const answer = this.nextElementSibling;
-            const isOpen = answer.style.maxHeight;
+        function toggleFAQ() {
+            const faqItem = question.closest('.faq-item');
+            const answer = question.nextElementSibling;
+            const isOpen = faqItem.classList.contains('active');
             
-            // Close all other answers
-            document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
-                otherAnswer.style.maxHeight = null;
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-item').forEach(otherItem => {
+                if (otherItem !== faqItem) {
+                    otherItem.classList.remove('active');
+                    const otherAnswer = otherItem.querySelector('.faq-answer');
+                    otherAnswer.style.maxHeight = null;
+                }
             });
             
-            // Toggle current answer
+            // Toggle current item
             if (isOpen) {
+                faqItem.classList.remove('active');
                 answer.style.maxHeight = null;
             } else {
+                faqItem.classList.add('active');
                 answer.style.maxHeight = answer.scrollHeight + 'px';
             }
+        }
+        
+        // Add both click and touch events for better mobile support
+        question.addEventListener('click', toggleFAQ);
+        question.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            toggleFAQ();
         });
     });
 
