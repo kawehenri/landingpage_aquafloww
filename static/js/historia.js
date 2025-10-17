@@ -5,19 +5,45 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
 
-    navToggle.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-        navToggle.classList.toggle('active');
-    });
+    console.log('Navigation elements found:', { navToggle, navMenu, navLinks: navLinks.length });
 
-    // Close mobile menu when clicking on a link
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            // Close mobile menu
-            navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Menu toggle clicked');
+            console.log('Menu classes before:', navMenu.className);
+            console.log('Toggle classes before:', navToggle.className);
+            
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+            
+            console.log('Menu classes after:', navMenu.className);
+            console.log('Toggle classes after:', navToggle.className);
         });
-    });
+
+        // Close mobile menu when clicking on a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                console.log('Link clicked, closing menu');
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (navMenu.classList.contains('active')) {
+                if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                    console.log('Clicked outside, closing menu');
+                    navMenu.classList.remove('active');
+                    navToggle.classList.remove('active');
+                }
+            }
+        });
+    } else {
+        console.error('Navigation elements not found!');
+    }
 
     // Smooth scrolling for navigation links
     navLinks.forEach(link => {
@@ -347,6 +373,62 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 6000); // 6 seconds for team carousels
         }
     });
+
+    // Back to top button functionality
+    const backToTopButton = document.getElementById('back-to-top');
+    
+    if (backToTopButton) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // Enhanced testimonial navigation with touch support
+    const nextTestimonialBtn = document.querySelector('.next-testimonial');
+    const prevTestimonialBtn = document.querySelector('.prev-testimonial');
+    
+    if (nextTestimonialBtn) {
+        nextTestimonialBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (typeof nextTestimonial === 'function') {
+                nextTestimonial();
+            }
+        });
+        
+        nextTestimonialBtn.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            if (typeof nextTestimonial === 'function') {
+                nextTestimonial();
+            }
+        });
+    }
+    
+    if (prevTestimonialBtn) {
+        prevTestimonialBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (typeof prevTestimonial === 'function') {
+                prevTestimonial();
+            }
+        });
+        
+        prevTestimonialBtn.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            if (typeof prevTestimonial === 'function') {
+                prevTestimonial();
+            }
+        });
+    }
 
     console.log('História page loaded successfully! 📚');
 });
