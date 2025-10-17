@@ -33,12 +33,17 @@
                 <span class="brand-text">AquaFloww</span>
             </div>
             <div class="nav-menu" id="nav-menu">
-                <a href="index.html" class="nav-link btn-voltar" onclick="window.location.href='index.html'; return false;">
+                <a href="index.html" class="nav-link btn-voltar" onclick="window.location.href='index.html'; return false;" title="Voltar para página inicial">
                     <i class="fas fa-arrow-left"></i>
-                    Voltar
                 </a>
-                <a href="#timeline" class="nav-link">História</a>
+                <a href="#timeline" class="nav-link">Timeline</a>
+                <a href="#challenges" class="nav-link">Desafios</a>
+                <a href="#video" class="nav-link">Vídeo</a>
+                <a href="#stats" class="nav-link">Stats</a>
+                <a href="#testimonials" class="nav-link">Depoimentos</a>
+                <a href="#gallery" class="nav-link">Galeria</a>
                 <a href="#teams" class="nav-link">Equipes</a>
+                <a href="#learnings" class="nav-link">Aprendizados</a>
             </div>
             <div class="nav-toggle" id="nav-toggle">
                 <span class="bar"></span>
@@ -169,8 +174,66 @@
         </div>
     </section>
 
+    <!-- Challenges Section -->
+    <section id="challenges" class="challenges-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Desafios e Soluções</h2>
+                <p class="section-subtitle">
+                    Os obstáculos que enfrentamos e como os superamos durante o desenvolvimento
+                </p>
+            </div>
+            <div class="challenges-grid">
+                <div class="challenge-item">
+                    <div class="challenge-icon">
+                        <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="challenge-title">Integração Hardware-Software</h3>
+                    <p class="challenge-description">
+                        Um dos maiores desafios foi garantir a comunicação perfeita entre os componentes 
+                        físicos e o sistema de software.
+                    </p>
+                    <div class="solution">
+                        <strong>Solução:</strong> Desenvolvimento de APIs robustas e protocolos de comunicação 
+                        padronizados, com testes extensivos em diferentes cenários.
+                    </div>
+                </div>
+                
+                <div class="challenge-item">
+                    <div class="challenge-icon">
+                        <i class="fas fa-users" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="challenge-title">Coordenação entre Equipes</h3>
+                    <p class="challenge-description">
+                        Coordenar 25+ estudantes de diferentes áreas técnicas foi um desafio logístico 
+                        e de comunicação.
+                    </p>
+                    <div class="solution">
+                        <strong>Solução:</strong> Implementação de metodologias ágeis, reuniões semanais 
+                        e uso de ferramentas colaborativas para manter todos alinhados.
+                    </div>
+                </div>
+                
+                <div class="challenge-item">
+                    <div class="challenge-icon">
+                        <i class="fas fa-clock" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="challenge-title">Cronograma Apertado</h3>
+                    <p class="challenge-description">
+                        Desenvolver um sistema complexo em apenas 6 meses exigiu planejamento 
+                        rigoroso e execução eficiente.
+                    </p>
+                    <div class="solution">
+                        <strong>Solução:</strong> Divisão clara de responsabilidades, sprints de 2 semanas 
+                        e priorização de funcionalidades essenciais.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Video Section - Atualizado -->
-    <section class="video-section">
+    <section id="video" class="video-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">O Início de Tudo</h2>
@@ -221,7 +284,7 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="stats-section">
+    <section id="stats" class="stats-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Números do Projeto</h2>
@@ -267,7 +330,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials-section">
+    <section id="testimonials" class="testimonials-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">O que dizem sobre o projeto</h2>
@@ -277,6 +340,13 @@
             </div>
             
             <div class="testimonials-carousel">
+                <button class="testimonial-nav prev-testimonial" onclick="prevTestimonial()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="testimonial-nav next-testimonial" onclick="nextTestimonial()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
                 <div class="testimonial active">
                     <div class="testimonial-content">
                         <div class="quote-icon">
@@ -345,18 +415,138 @@
                         </div>
                     </div>
                 </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Trabalhar na equipe de elétrica do AquaFloww foi uma experiência transformadora. 
+                            Aprendemos a integrar sensores, controladores e sistemas de automação de forma 
+                            prática e eficiente. Ver o sistema funcionando perfeitamente foi a recompensa 
+                            de todo nosso esforço e dedicação."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-photo">
+                                <img src="./static/imgs/quaresma.jpg" alt="JP Quaresma">
+                            </div>
+                            <div class="author-info">
+                                <h4>JP Quaresma</h4>
+                                <p>Estudante - Equipe Elétrica</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Como líder da equipe de frontend, foi incrível ver nossa interface ganhar vida. 
+                            Cada linha de código, cada animação, cada interação foi pensada para proporcionar 
+                            a melhor experiência ao usuário. O AquaFloww não é só funcional, é também 
+                            visualmente impressionante."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-photo">
+                                <img src="./static/imgs/jose.jpg" alt="Philipi José">
+                            </div>
+                            <div class="author-info">
+                                <h4>Philipi José</h4>
+                                <p>Estudante - Equipe Frontend</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "O backend do AquaFloww foi nosso maior desafio e nossa maior conquista. 
+                            Desenvolver a lógica de controle, integração com sensores e comunicação 
+                            entre sistemas nos ensinou muito sobre arquitetura de software. 
+                            Cada bug resolvido foi uma vitória."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-photo">
+                                <img src="./static/imgs/filipe.jpg" alt="Filipe Pereira">
+                            </div>
+                            <div class="author-info">
+                                <h4>Filipe Pereira</h4>
+                                <p>Estudante - Equipe Backend</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "A documentação do AquaFloww foi fundamental para o sucesso do projeto. 
+                            Organizamos cada detalhe técnico, criamos manuais claros e apresentações 
+                            profissionais. Ver nossa documentação impressionar a direção do SENAI 
+                            foi uma das maiores conquistas da equipe."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-photo">
+                                <img src="./static/imgs/yasmin.jpg" alt="Yasmin Raquel">
+                            </div>
+                            <div class="author-info">
+                                <h4>Yasmin Raquel</h4>
+                                <p>Estudante - Equipe Documentação</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "O Karython não foi apenas nosso instrutor, foi nosso mentor e inspiração. 
+                            Ele acreditou no projeto quando era apenas uma ideia, nos motivou quando 
+                            desanimávamos e nos ensinou que tecnologia vai além do código - é sobre 
+                            resolver problemas reais e fazer a diferença. O AquaFloww existe porque 
+                            ele nos mostrou que somos capazes de grandes coisas."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-photo">
+                                <img src="./static/imgs/kawehenrique.jpg" alt="Kawê Henrique">
+                            </div>
+                            <div class="author-info">
+                                <h4>Kawê Henrique</h4>
+                                <p>Estudante - Criador da Landing Page</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             
             <div class="testimonial-indicators">
                 <span class="indicator active" data-slide="0"></span>
                 <span class="indicator" data-slide="1"></span>
                 <span class="indicator" data-slide="2"></span>
+                <span class="indicator" data-slide="3"></span>
+                <span class="indicator" data-slide="4"></span>
+                <span class="indicator" data-slide="5"></span>
+                <span class="indicator" data-slide="6"></span>
             </div>
         </div>
     </section>
 
     <!-- Gallery Section -->
-    <section class="gallery-section">
+    <section id="gallery" class="gallery-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Galeria de Fotos</h2>
@@ -971,6 +1161,86 @@
                                     precisão na elaboração dos materiais técnicos. Competência e dedicação notáveis.
                                 </p>
                             </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learnings Section -->
+    <section id="learnings" class="learnings-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Principais Aprendizados</h2>
+                <p class="section-subtitle">
+                    O que aprendemos durante esta jornada transformadora
+                </p>
+            </div>
+            <div class="learnings-grid">
+                <div class="learning-item">
+                    <div class="learning-icon">
+                        <i class="fas fa-handshake" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="learning-title">Trabalho em Equipe</h3>
+                    <p class="learning-description">
+                        A importância da colaboração entre diferentes áreas de conhecimento. 
+                        Descobrimos que a sinergia entre equipes é fundamental para o sucesso de projetos complexos.
+                    </p>
+                </div>
+                
+                <div class="learning-item">
+                    <div class="learning-icon">
+                        <i class="fas fa-lightbulb" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="learning-title">Inovação e Criatividade</h3>
+                    <p class="learning-description">
+                        Como transformar uma ideia simples em uma solução complexa e inovadora. 
+                        Aprendemos que a criatividade é o motor da inovação tecnológica.
+                    </p>
+                </div>
+                
+                <div class="learning-item">
+                    <div class="learning-icon">
+                        <i class="fas fa-chart-line" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="learning-title">Persistência e Resiliência</h3>
+                    <p class="learning-description">
+                        O valor de não desistir diante dos desafios técnicos. Cada obstáculo superado 
+                        nos tornou mais fortes e preparados para futuros projetos.
+                    </p>
+                </div>
+                
+                <div class="learning-item">
+                    <div class="learning-icon">
+                        <i class="fas fa-globe-americas" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="learning-title">Impacto Social</h3>
+                    <p class="learning-description">
+                        Como a tecnologia pode ser usada para resolver problemas reais e contribuir 
+                        para um futuro mais sustentável. Nosso projeto tem potencial para impactar 
+                        positivamente a agricultura.
+                    </p>
+                </div>
+                
+                <div class="learning-item">
+                    <div class="learning-icon">
+                        <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="learning-title">Aprendizado Contínuo</h3>
+                    <p class="learning-description">
+                        A importância de estar sempre aprendendo e se atualizando. Este projeto 
+                        nos ensinou que o conhecimento é uma jornada sem fim.
+                    </p>
+                </div>
+                
+                <div class="learning-item">
+                    <div class="learning-icon">
+                        <i class="fas fa-trophy" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="learning-title">Liderança e Motivação</h3>
+                    <p class="learning-description">
+                        Como inspirar e motivar uma equipe grande. Aprendemos que a liderança 
+                        eficaz é fundamental para manter todos engajados e focados no objetivo comum.
+                    </p>
                 </div>
             </div>
         </div>

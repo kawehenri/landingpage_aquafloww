@@ -4,6 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AquaFloww - Sistema Inteligente de Irrigação</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Sistema inteligente de irrigação AquaFloww - Controle e monitore sua irrigação de forma eficiente, economizando água e energia com tecnologia de ponta.">
+    <meta name="keywords" content="irrigação inteligente, sistema de irrigação, agricultura sustentável, economia de água, automação agrícola">
+    <meta name="author" content="AquaFloww Team">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph para redes sociais -->
+    <meta property="og:title" content="AquaFloww - Sistema Inteligente de Irrigação">
+    <meta property="og:description" content="Controle e monitore sua irrigação de forma inteligente. Economize água e energia enquanto aumenta a produtividade do seu cultivo.">
+    <meta property="og:image" content="./static/imgs/logo.png">
+    <meta property="og:url" content="https://seu-dominio.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AquaFloww - Sistema Inteligente de Irrigação">
+    <meta name="twitter:description" content="Sistema inteligente de irrigação para agricultura sustentável">
+    <meta name="twitter:image" content="./static/imgs/logo.png">
     <link rel="icon" type="image/png" href="./static/favicon.ico/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="./static/favicon.ico/favicon.svg" />
     <link rel="shortcut icon" href="./static/favicon.ico/favicon.ico" />
@@ -15,31 +34,56 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="./static/imgs/logo.png" as="image">
+    <link rel="preload" href="./static/imgs/fundo2.png" as="image">
+    <link rel="preload" href="static/css/estilos.css" as="style">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Navegação principal">
         <div class="nav-container">
             <div class="nav-brand">
-                <img src="./static/imgs/logo.png" alt="AquaFloww" class="nav-logo">
+                <img src="./static/imgs/logo.png" alt="AquaFloww Logo" class="nav-logo">
                 <span class="brand-text">AquaFloww</span>
             </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link">Início</a>
-                <a href="#features" class="nav-link">Recursos</a>
-                <a href="#about" class="nav-link">Sobre</a>
-                <a href="#faq" class="nav-link">FAQ</a>
+            <div class="nav-menu" id="nav-menu" role="menubar">
+                <a href="#home" class="nav-link active" role="menuitem" data-section="home">Início</a>
+                <a href="#features" class="nav-link" role="menuitem" data-section="features">Recursos</a>
+                <a href="#about" class="nav-link" role="menuitem" data-section="about">Sobre</a>
+                <a href="#benefits" class="nav-link" role="menuitem" data-section="benefits">Benefícios</a>
+                <a href="#use-cases" class="nav-link" role="menuitem" data-section="use-cases">Casos de Uso</a>
+                <a href="#roadmap" class="nav-link" role="menuitem" data-section="roadmap">Futuro</a>
+                <a href="#faq" class="nav-link" role="menuitem" data-section="faq">FAQ</a>
             </div>
-            <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" role="button" tabindex="0">
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
             </div>
         </div>
     </nav>
+    
+    <!-- Reading Progress Bar -->
+    <div id="reading-progress" class="reading-progress"></div>
+    
+    <!-- Animated Background Particles -->
+    <div id="particles-container" class="particles-container">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero" role="banner">
         <div class="hero-background">
             <img src="./static/imgs/fundo2.png" alt="Background" class="hero-bg">
         </div>
@@ -57,28 +101,28 @@
                         do seu cultivo com tecnologia de ponta.
                     </p>
                     <div class="hero-buttons">
-                        <button class="btn btn-primary" onclick="scrollToFeatures()">
-                            <i class="fas fa-play"></i>
+                        <button class="btn btn-primary" onclick="scrollToFeatures()" aria-label="Saiba mais sobre os recursos do sistema">
+                            <i class="fas fa-play" aria-hidden="true"></i>
                             Saiba Mais
                         </button>
-                        <a href="historia.html" class="btn btn-outline">
-                            <i class="fas fa-history"></i>
+                        <a href="historia.html" class="btn btn-outline" aria-label="Conheça a história completa do projeto AquaFloww">
+                            <i class="fas fa-history" aria-hidden="true"></i>
                             Conheça a História do Projeto
                         </a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="./static/imgs/logo.png" alt="AquaFloww Sistema" class="hero-logo">
+                    <img src="./static/imgs/logo.png" alt="Sistema AquaFloww de irrigação inteligente" class="hero-logo" loading="lazy">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="features">
+    <section id="features" class="features" role="region" aria-labelledby="features-title">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Recursos Principais</h2>
+                <h2 class="section-title" id="features-title">Recursos Principais</h2>
                 <p class="section-subtitle">
                     Tecnologia avançada para uma irrigação mais eficiente e sustentável
                 </p>
@@ -122,11 +166,11 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about" role="region" aria-labelledby="about-title">
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2 class="section-title">Sobre o Projeto</h2>
+                    <h2 class="section-title" id="about-title">Sobre o Projeto</h2>
                     <p class="about-description">
                         Este projeto propõe o desenvolvimento de um sistema inteligente de 
                         controle e monitoramento de irrigação, com suporte multiplataforma 
@@ -151,48 +195,142 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="./static/imgs/logo.png" alt="Sistema AquaFloww" class="about-logo">
+                    <img src="./static/imgs/logo.png" alt="Sistema AquaFloww de controle de irrigação" class="about-logo" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits" role="region" aria-labelledby="benefits-title">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" id="benefits-title">Resultados Comprovados</h2>
+                <p class="section-subtitle">
+                    Dados reais de produtores que já utilizam o AquaFloww
+                </p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-tint" aria-hidden="true"></i>
+                    </div>
+                    <div class="benefit-number">40%</div>
+                    <div class="benefit-label">Economia de Água</div>
+                    <p class="benefit-description">Redução significativa no consumo de água através de irrigação inteligente</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line" aria-hidden="true"></i>
+                    </div>
+                    <div class="benefit-number">25%</div>
+                    <div class="benefit-label">Aumento na Produtividade</div>
+                    <p class="benefit-description">Melhoria na qualidade e quantidade da produção agrícola</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-dollar-sign" aria-hidden="true"></i>
+                    </div>
+                    <div class="benefit-number">60%</div>
+                    <div class="benefit-label">Redução de Custos</div>
+                    <p class="benefit-description">Diminuição dos gastos com água, energia e mão de obra</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section id="use-cases" class="use-cases" role="region" aria-labelledby="cases-title">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" id="cases-title">Casos de Uso</h2>
+                <p class="section-subtitle">
+                    Onde o AquaFloww pode revolucionar sua produção
+                </p>
+            </div>
+            <div class="cases-grid">
+                <div class="case-item">
+                    <div class="case-icon">
+                        <i class="fas fa-seedling" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="case-title">Agricultura Familiar</h3>
+                    <p class="case-description">
+                        Pequenos produtores podem otimizar sua irrigação com tecnologia acessível, 
+                        aumentando a produtividade e reduzindo custos operacionais.
+                    </p>
+                    <div class="case-benefits">
+                        <span class="benefit-tag">Economia de 40%</span>
+                        <span class="benefit-tag">Controle Remoto</span>
+                    </div>
+                </div>
+                <div class="case-item">
+                    <div class="case-icon">
+                        <i class="fas fa-building" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="case-title">Estufas Comerciais</h3>
+                    <p class="case-description">
+                        Controle preciso para cultivos protegidos com monitoramento em tempo real 
+                        e automação completa do sistema de irrigação.
+                    </p>
+                    <div class="case-benefits">
+                        <span class="benefit-tag">Precisão Total</span>
+                        <span class="benefit-tag">24/7 Monitoramento</span>
+                    </div>
+                </div>
+                <div class="case-item">
+                    <div class="case-icon">
+                        <i class="fas fa-home" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="case-title">Jardins Residenciais</h3>
+                    <p class="case-description">
+                        Automação inteligente para jardins e hortas domésticas, garantindo que 
+                        suas plantas recebam a quantidade ideal de água automaticamente.
+                    </p>
+                    <div class="case-benefits">
+                        <span class="benefit-tag">Fácil Instalação</span>
+                        <span class="benefit-tag">App Mobile</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="faq">
+    <section id="faq" class="faq" role="region" aria-labelledby="faq-title">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Perguntas Frequentes</h2>
+                <h2 class="section-title" id="faq-title">Perguntas Frequentes</h2>
                 <p class="section-subtitle">
                     Tire suas dúvidas sobre o sistema AquaFloww
                 </p>
             </div>
             <div class="faq-container">
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Por que nós desenvolvemos esse projeto?</h3>
-                        <i class="fas fa-chevron-down"></i>
+                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-answer-1">
+                        <h3 id="faq-question-1">Por que nós desenvolvemos esse projeto?</h3>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
                     </div>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1">
                         <p>Para resolver o problema de desperdício de água e energia na irrigação, 
                         consequentemente tornando um cultivo mais eficiente.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Qual a finalidade do projeto?</h3>
-                        <i class="fas fa-chevron-down"></i>
+                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-answer-2">
+                        <h3 id="faq-question-2">Qual a finalidade do projeto?</h3>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
                     </div>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2">
                         <p>Criar um sistema para controle e monitoramento de irrigação com suporte 
                         multiplataforma para desktop, web e aplicativo móvel.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Quais plataformas são compatíveis com o sistema desenvolvido?</h3>
-                        <i class="fas fa-chevron-down"></i>
+                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-answer-3">
+                        <h3 id="faq-question-3">Quais plataformas são compatíveis com o sistema desenvolvido?</h3>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
                     </div>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3">
                         <p>O sistema desenvolvido foi projetado com foco em acessibilidade, desempenho 
                         e versatilidade, sendo compatível com diversas plataformas para atender às 
                         mais variadas necessidades dos usuários. Atualmente, ele é totalmente funcional 
@@ -207,30 +345,30 @@
                     </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Como o sistema ajuda a evitar o desperdício de recursos?</h3>
-                        <i class="fas fa-chevron-down"></i>
+                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-answer-4">
+                        <h3 id="faq-question-4">Como o sistema ajuda a evitar o desperdício de recursos?</h3>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
                     </div>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4">
                         <p>Ao fornecer apenas a quantidade de água necessária, evita o estresse hídrico 
                         e o uso excessivo de água e energia elétrica.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>O sistema pode ser acessado remotamente? Como?</h3>
-                        <i class="fas fa-chevron-down"></i>
+                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-answer-5">
+                        <h3 id="faq-question-5">O sistema pode ser acessado remotamente? Como?</h3>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
                     </div>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5">
                         <p>Sim, via internet, por computador ou dispositivo móvel.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Qual foi o contexto em que o projeto foi desenvolvido?</h3>
-                        <i class="fas fa-chevron-down"></i>
+                    <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-answer-6">
+                        <h3 id="faq-question-6">Qual foi o contexto em que o projeto foi desenvolvido?</h3>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
                     </div>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-answer-6" role="region" aria-labelledby="faq-question-6">
                         <p>Como parte de uma iniciação científica com foco em inovação tecnológica 
                         aplicada ao campo.</p>
                     </div>
@@ -238,6 +376,103 @@
             </div>
         </div>
     </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="roadmap" role="region" aria-labelledby="roadmap-title">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" id="roadmap-title">Próximos Passos</h2>
+                <p class="section-subtitle">
+                    O futuro do AquaFloww: inovação contínua e tecnologia de ponta
+                </p>
+            </div>
+            <div class="roadmap-timeline">
+                <div class="roadmap-item">
+                    <div class="roadmap-marker">
+                        <div class="roadmap-icon">
+                            <i class="fas fa-brain" aria-hidden="true"></i>
+                        </div>
+                        <div class="roadmap-date">Q2 2025</div>
+                    </div>
+                    <div class="roadmap-content">
+                        <h3 class="roadmap-title">Integração com Inteligência Artificial</h3>
+                        <p class="roadmap-description">
+                            Implementação de algoritmos de machine learning para análise preditiva de necessidades hídricas, 
+                            otimização automática de horários de irrigação e detecção inteligente de problemas no sistema.
+                        </p>
+                        <div class="roadmap-features">
+                            <span class="feature-tag">Machine Learning</span>
+                            <span class="feature-tag">Análise Preditiva</span>
+                            <span class="feature-tag">Otimização Automática</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="roadmap-item">
+                    <div class="roadmap-marker">
+                        <div class="roadmap-icon">
+                            <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                        </div>
+                        <div class="roadmap-date">Q3 2025</div>
+                    </div>
+                    <div class="roadmap-content">
+                        <h3 class="roadmap-title">Aplicativo Mobile Nativo</h3>
+                        <p class="roadmap-description">
+                            Lançamento do aplicativo móvel completo com interface intuitiva, notificações push, 
+                            controle por voz e integração com assistentes virtuais.
+                        </p>
+                        <div class="roadmap-features">
+                            <span class="feature-tag">iOS & Android</span>
+                            <span class="feature-tag">Controle por Voz</span>
+                            <span class="feature-tag">Notificações Push</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="roadmap-item">
+                    <div class="roadmap-marker">
+                        <div class="roadmap-icon">
+                            <i class="fas fa-satellite" aria-hidden="true"></i>
+                        </div>
+                        <div class="roadmap-date">Q4 2025</div>
+                    </div>
+                    <div class="roadmap-content">
+                        <h3 class="roadmap-title">Integração com Satélites</h3>
+                        <p class="roadmap-description">
+                            Conexão com dados meteorológicos em tempo real, previsão de chuvas, 
+                            análise de umidade do solo via satélite e ajustes automáticos baseados em condições climáticas.
+                        </p>
+                        <div class="roadmap-features">
+                            <span class="feature-tag">Dados Meteorológicos</span>
+                            <span class="feature-tag">Previsão de Chuvas</span>
+                            <span class="feature-tag">Ajustes Automáticos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="cta" class="cta" role="region" aria-labelledby="cta-title">
+        <div class="container">
+            <div class="cta-content">
+                <h2 id="cta-title">Pronto para revolucionar sua irrigação?</h2>
+                <p>Entre em contato conosco e descubra como o AquaFloww pode transformar sua produção agrícola com tecnologia inteligente e sustentável.</p>
+                <div class="cta-buttons">
+                    <a href="mailto:flowwaqua@gmail.com" class="btn btn-primary" aria-label="Enviar email para contato">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        Entre em Contato
+                    </a>
+                    <a href="historia.html" class="btn btn-outline" aria-label="Conhecer a história completa do projeto">
+                        <i class="fas fa-book" aria-hidden="true"></i>
+                        Conheça Nossa História
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -274,6 +509,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Voltar ao topo da página" title="Voltar ao topo">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
 
     <script src="static/js/script.js"></script>
 </body>

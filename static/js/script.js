@@ -204,6 +204,248 @@ document.addEventListener('DOMContentLoaded', function() {
         img.src = src;
     });
 
+    // Back to top button functionality
+    const backToTopButton = document.getElementById('back-to-top');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
+        
+        // Update reading progress
+        updateReadingProgress();
+    });
+    
+    backToTopButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Reading progress functionality
+    function updateReadingProgress() {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        
+        const progressBar = document.getElementById('reading-progress');
+        if (progressBar) {
+            progressBar.style.width = scrolled + '%';
+        }
+    }
+
+    // Enhanced FAQ functionality with keyboard support
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        // Click event
+        question.addEventListener('click', function() {
+            toggleFAQ(item);
+        });
+        
+        // Keyboard event
+        question.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleFAQ(item);
+            }
+        });
+    });
+    
+    function toggleFAQ(item) {
+        const isActive = item.classList.contains('active');
+        
+        // Close all other FAQ items
+        faqItems.forEach(otherItem => {
+            if (otherItem !== item) {
+                otherItem.classList.remove('active');
+                const otherQuestion = otherItem.querySelector('.faq-question');
+                otherQuestion.setAttribute('aria-expanded', 'false');
+            }
+        });
+        
+        // Toggle current item
+        const question = item.querySelector('.faq-question');
+        if (isActive) {
+            item.classList.remove('active');
+            question.setAttribute('aria-expanded', 'false');
+        } else {
+            item.classList.add('active');
+            question.setAttribute('aria-expanded', 'true');
+        }
+    }
+
+    // Enhanced mobile menu with keyboard support
+    navToggle.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+            navToggle.setAttribute('aria-expanded', navMenu.classList.contains('active'));
+        }
+    });
+
+    // Update aria-expanded on mobile menu toggle
+    navToggle.addEventListener('click', function() {
+        navToggle.setAttribute('aria-expanded', navMenu.classList.contains('active'));
+    });
+
+    // Animate benefit numbers when they come into view
+    const benefitNumbers = document.querySelectorAll('.benefit-number');
+    const benefitObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateBenefitNumber(entry.target);
+                benefitObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    benefitNumbers.forEach(number => {
+        benefitObserver.observe(number);
+    });
+
+    function animateBenefitNumber(element) {
+        const target = element.textContent;
+        const numericValue = parseInt(target.replace(/[^\d]/g, ''));
+        const suffix = target.replace(/[\d]/g, '');
+        
+        let current = 0;
+        const increment = numericValue / 50;
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= numericValue) {
+                current = numericValue;
+                clearInterval(timer);
+            }
+            element.textContent = Math.floor(current) + suffix;
+        }, 30);
+    }
+
+    // Active navigation highlighting
+    const sections = document.querySelectorAll('section[id]');
+    const navLinksActive = document.querySelectorAll('.nav-link[data-section]');
+    
+    function updateActiveNav() {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.offsetHeight;
+            if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinksActive.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('data-section') === current) {
+                link.classList.add('active');
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', updateActiveNav);
+
+    // Enhanced particle animation
+    function createParticle() {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDuration = (Math.random() * 20 + 15) + 's';
+        particle.style.animationDelay = Math.random() * 5 + 's';
+        particle.style.opacity = Math.random() * 0.5 + 0.1;
+        
+        document.getElementById('particles-container').appendChild(particle);
+        
+        setTimeout(() => {
+            particle.remove();
+        }, 35000);
+    }
+    
+    // Create particles periodically
+    setInterval(createParticle, 3000);
+
+    // Enhanced scroll animations with intersection observer
+    const animationObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    // Observe all sections for scroll animations
+    sections.forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(30px)';
+        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        animationObserver.observe(section);
+    });
+
+    // Enhanced button interactions
+    const allButtons = document.querySelectorAll('.btn, .case-item, .benefit-item, .roadmap-item');
+    allButtons.forEach(button => {
+        button.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px) scale(1.02)';
+        });
+        
+        button.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+
+    // Parallax effect for hero background
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const heroBg = document.querySelector('.hero-bg');
+        if (heroBg) {
+            heroBg.style.transform = `translateY(${scrolled * 0.5}px)`;
+        }
+    });
+
+    // Enhanced loading states
+    const loadingElements = document.querySelectorAll('.feature-card, .case-item, .benefit-item');
+    loadingElements.forEach((element, index) => {
+        element.style.animationDelay = `${index * 0.1}s`;
+        element.classList.add('fade-in-up');
+    });
+
+    // Interactive roadmap items
+    const roadmapItems = document.querySelectorAll('.roadmap-item');
+    roadmapItems.forEach(item => {
+        item.addEventListener('click', function() {
+            roadmapItems.forEach(otherItem => {
+                otherItem.classList.remove('active');
+            });
+            this.classList.add('active');
+        });
+    });
+
+    // Enhanced FAQ with smooth animations
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const answer = this.nextElementSibling;
+            const isOpen = answer.style.maxHeight;
+            
+            // Close all other answers
+            document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
+                otherAnswer.style.maxHeight = null;
+            });
+            
+            // Toggle current answer
+            if (isOpen) {
+                answer.style.maxHeight = null;
+            } else {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+        });
+    });
+
     console.log('AquaFloww landing page loaded successfully! 🌊');
 });
 

@@ -47,13 +47,31 @@ function initTestimonialsCarousel() {
     let currentSlide = 0;
     
     function showSlide(index) {
+        console.log('Showing slide:', index);
+        // Hide all testimonials
         testimonials.forEach((testimonial, i) => {
-            testimonial.classList.toggle('active', i === index);
+            testimonial.classList.remove('active');
         });
         
+        // Show current testimonial
+        if (testimonials[index]) {
+            testimonials[index].classList.add('active');
+            console.log('Activated testimonial:', index, testimonials[index].querySelector('h4')?.textContent);
+        } else {
+            console.log('Testimonial not found at index:', index);
+        }
+        
+        // Update indicators
         indicators.forEach((indicator, i) => {
-            indicator.classList.toggle('active', i === index);
+            indicator.classList.remove('active');
         });
+        
+        if (indicators[index]) {
+            indicators[index].classList.add('active');
+            console.log('Activated indicator:', index);
+        } else {
+            console.log('Indicator not found at index:', index);
+        }
     }
     
     function nextSlide() {
@@ -71,6 +89,85 @@ function initTestimonialsCarousel() {
             showSlide(currentSlide);
         });
     });
+    
+    // Initialize first slide
+    console.log('Total testimonials:', testimonials.length);
+    console.log('Total indicators:', indicators.length);
+    testimonials.forEach((testimonial, index) => {
+        console.log(`Testimonial ${index}:`, testimonial.querySelector('h4')?.textContent || 'No title found');
+    });
+    showSlide(0);
+}
+
+// Global functions for testimonial navigation
+function nextTestimonial() {
+    const testimonials = document.querySelectorAll('.testimonial');
+    const indicators = document.querySelectorAll('.testimonial-indicators .indicator');
+    let currentSlide = 0;
+    
+    // Find current active slide
+    testimonials.forEach((testimonial, index) => {
+        if (testimonial.classList.contains('active')) {
+            currentSlide = index;
+        }
+    });
+    
+    // Move to next slide
+    currentSlide = (currentSlide + 1) % testimonials.length;
+    
+    // Hide all testimonials
+    testimonials.forEach((testimonial, index) => {
+        testimonial.classList.remove('active');
+    });
+    
+    // Show current testimonial
+    if (testimonials[currentSlide]) {
+        testimonials[currentSlide].classList.add('active');
+    }
+    
+    // Update indicators
+    indicators.forEach((indicator, index) => {
+        indicator.classList.remove('active');
+    });
+    
+    if (indicators[currentSlide]) {
+        indicators[currentSlide].classList.add('active');
+    }
+}
+
+function prevTestimonial() {
+    const testimonials = document.querySelectorAll('.testimonial');
+    const indicators = document.querySelectorAll('.testimonial-indicators .indicator');
+    let currentSlide = 0;
+    
+    // Find current active slide
+    testimonials.forEach((testimonial, index) => {
+        if (testimonial.classList.contains('active')) {
+            currentSlide = index;
+        }
+    });
+    
+    // Move to previous slide
+    currentSlide = (currentSlide - 1 + testimonials.length) % testimonials.length;
+    
+    // Hide all testimonials
+    testimonials.forEach((testimonial, index) => {
+        testimonial.classList.remove('active');
+    });
+    
+    // Show current testimonial
+    if (testimonials[currentSlide]) {
+        testimonials[currentSlide].classList.add('active');
+    }
+    
+    // Update indicators
+    indicators.forEach((indicator, index) => {
+        indicator.classList.remove('active');
+    });
+    
+    if (indicators[currentSlide]) {
+        indicators[currentSlide].classList.add('active');
+    }
 }
 
 // Lightbox functionality
