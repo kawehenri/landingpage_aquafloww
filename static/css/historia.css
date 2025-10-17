@@ -7,6 +7,16 @@
     list-style: none;
 }
 
+.brand-text {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #2c5aa0;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(44, 90, 160, 0.1);
+    font-family: "Montserrat Alternates", sans-serif;
+    font-style: italic;
+}
+
 .nav-link {
     text-decoration: none;
     color: #333;
@@ -418,10 +428,14 @@
     font-size: 2.2rem;
 }
 
-/* Team Carousel Styles */
-.team-carousel {
-    max-width: 400px;
+/* Team Grid Styles */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .team-carousel-container {
@@ -437,11 +451,18 @@
 }
 
 .team-member {
-    min-width: 100%;
     background: white;
     padding: 30px;
     text-align: center;
     position: relative;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .member-photo {
@@ -628,9 +649,10 @@
         gap: 10px;
     }
 
-    .team-carousel {
-        max-width: 100%;
-        margin: 0 20px;
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        padding: 0 15px;
     }
 
     .member-photo {
@@ -849,6 +871,12 @@
 
     .team-next-btn {
         right: 5px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 10px;
     }
 }
 

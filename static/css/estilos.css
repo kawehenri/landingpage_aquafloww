@@ -52,17 +52,18 @@ body {
 }
 
 .nav-logo {
-    height: 60px;
+    height: 120px;
     width: auto;
 }
 
 .brand-text {
-    font-size: 1.8rem;
-    font-weight: 800;
+    font-size: 1.6rem;
+    font-weight: 600;
     color: #2c5aa0;
-    letter-spacing: -0.5px;
+    letter-spacing: 0.5px;
     text-shadow: 0 2px 4px rgba(44, 90, 160, 0.1);
-    font-family: 'Inter', sans-serif;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-style: italic;
 }
 
 .nav-menu {
@@ -684,11 +685,12 @@ body {
     }
 
     .nav-logo {
-        height: 55px;
+        height: 95px;
     }
 
     .brand-text {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
+        letter-spacing: 0.4px;
     }
 }
 
@@ -730,11 +732,12 @@ body {
     }
 
     .nav-logo {
-        height: 70px;
+        height: 100px;
     }
 
     .brand-text {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
+        letter-spacing: 0.3px;
     }
 
     .support-logo {
