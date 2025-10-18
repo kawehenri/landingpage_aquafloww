@@ -1640,3 +1640,295 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #1e3a8a;
 }
+
+/* Estilos para seções de história - Garantir visibilidade */
+.learnings-section,
+.learnings-grid,
+.learning-item,
+.learning-icon,
+.learning-title,
+.learning-description {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+}
+
+.learnings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.learning-item {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.learning-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.learning-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #4ade80, #2c5aa0);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+}
+
+.learning-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.learning-description {
+    color: #666;
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+/* Challenges Section Styles */
+.challenges-section {
+    padding: 100px 0;
+    background: white;
+}
+
+.challenges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.challenge-item {
+    background: #f8fafc;
+    padding: 40px 30px;
+    border-radius: 20px;
+    border-left: 5px solid #4ade80;
+    transition: all 0.3s ease;
+}
+
+.challenge-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.challenge-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #4ade80, #2c5aa0);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.challenge-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.challenge-description {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.solution {
+    margin-top: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    border-left: 3px solid #2c5aa0;
+}
+
+.solution strong {
+    color: #2c5aa0;
+    font-weight: 600;
+}
+
+/* Member styles */
+.member-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.member-description {
+    color: #666;
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+/* Responsive improvements for mobile */
+@media (max-width: 768px) {
+    .learnings-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        margin-top: 40px !important;
+        padding: 0 15px !important;
+    }
+    
+    .learning-item {
+        padding: 25px 20px !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .learning-icon {
+        width: 60px !important;
+        height: 60px !important;
+        font-size: 1.5rem !important;
+        margin: 0 auto 15px !important;
+    }
+    
+    .learning-title {
+        font-size: 1.2rem !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .learning-description {
+        font-size: 0.9rem !important;
+        line-height: 1.6 !important;
+    }
+    
+    .challenges-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        margin-top: 40px !important;
+        padding: 0 15px !important;
+    }
+    
+    .challenge-item {
+        padding: 25px 20px !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .challenge-icon {
+        width: 60px !important;
+        height: 60px !important;
+        font-size: 1.5rem !important;
+        margin: 0 auto 15px !important;
+    }
+    
+    .challenge-title {
+        font-size: 1.2rem !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .challenge-description {
+        font-size: 0.9rem !important;
+        line-height: 1.6 !important;
+    }
+    
+    .solution {
+        padding: 12px !important;
+        font-size: 0.9rem !important;
+    }
+    
+    .member-name {
+        font-size: 1.1rem !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .member-description {
+        font-size: 0.9rem !important;
+        line-height: 1.5 !important;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .learnings-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 25px !important;
+        margin-top: 50px !important;
+        padding: 0 20px !important;
+    }
+    
+    .challenges-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 25px !important;
+        margin-top: 50px !important;
+        padding: 0 20px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .learning-item {
+        padding: 20px 15px !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .learning-icon {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 1.2rem !important;
+        margin: 0 auto 12px !important;
+    }
+    
+    .learning-title {
+        font-size: 1.1rem !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .learning-description {
+        font-size: 0.85rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    .challenge-item {
+        padding: 20px 15px !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .challenge-icon {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 1.2rem !important;
+        margin: 0 auto 12px !important;
+    }
+    
+    .challenge-title {
+        font-size: 1.1rem !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .challenge-description {
+        font-size: 0.85rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    .solution {
+        padding: 10px !important;
+        font-size: 0.85rem !important;
+    }
+    
+    .member-name {
+        font-size: 1rem !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .member-description {
+        font-size: 0.85rem !important;
+        line-height: 1.4 !important;
+    }
+}
